@@ -51,7 +51,13 @@ app.listen(app.get("port"), function(){
 
   getApprenticeFromDb(apprentice_id, function(error, result){
     console.log("Back from the getApprenticeDB function with result:", result);
-    res.json(result);
+
+    if (error || result == null || result.length != 1){
+      res.status(500).json({success:false, data: error});
+    } else {
+        res.json(result[0]);
+    }
+
   });
 
  }
