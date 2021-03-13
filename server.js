@@ -51,12 +51,9 @@ app.listen(app.get("port"), function(){
 
   getApprenticeFromDb(apprentice_id, function(error, result){
     console.log("Back from the getApprenticeDB function with result:", result);
+    res.json(result);
   });
 
-
-  var result = {apprentice_id: 238, firstname: "John", lastname: "Smith", birthdate: 1950-02-05};
-
-  res.json(result);
  }
 
  function getApprenticeFromDb(apprentice_id, callback){
