@@ -3,7 +3,7 @@ table{
     width: 920px;
   }
   
-  th, td, input{
+  th, td, input[type="number"]{
     text-align: center;
     vertical-align: middle;
     width: 23px;
