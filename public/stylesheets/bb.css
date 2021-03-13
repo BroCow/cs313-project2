@@ -1,0 +1,80 @@
+
+table{
+    width: 920px;
+  }
+  
+  th, td, input{
+    text-align: center;
+    vertical-align: middle;
+    width: 23px;
+  }
+  
+  #date_header{
+    text-align: center;
+    letter-spacing: 2px;
+  }
+  
+  #lineOut_header{
+    letter-spacing: 1.5px;
+  }
+  
+  .wrap{
+    margin-bottom: 20px;
+  }
+  
+  .yellow{
+    margin-bottom: 100px;
+  }
+  
+  .yellow_page{
+    width: 940px;
+    padding: 10px;
+    background-color: yellow;
+  }
+  
+  .blue{
+    background-color: blue;
+  }
+  
+  .monthTotal, #month_input, #year_input{
+    width: 59px;
+  }
+  
+  #dailyRecord{
+    position: relative;
+    left: 125px;
+    font-size: 1.2em;
+    letter-spacing: 2px;
+  }
+  
+  input[type="text"]{
+    margin-right: 10px;
+    margin-left: 10px;
+  }
+  
+  .sctitle{
+    position: relative;
+    left: 330px;
+    letter-spacing: 1.5px;
+  }
+  
+  .job_class_th{
+    font-size: 80%;
+    height: 46px;
+  }
+  
+  .job_class_hours{
+    height: 46px;
+  }
+  
+  .job_class_total{
+    height: 46px;
+    width: 59px;
+  }
+  
+  #comments_yellow{
+    position: relative;
+    margin-bottom: 0px;
+    left: 35px;
+    letter-spacing: 1.5px;
+  }

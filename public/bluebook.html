@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <script type="text/javascript" src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="/stylesheets/bb.css" />
+  <title>Bluebook App</title>
+</head>
+
+<body class="bluebook_body">
+    <main>
+        <div class="yellow">
+        <form class="yellow_page">
+            <table class="yellow_table">
+                <h4 class="sctitle">SOUND & COMMUNICATION APPRENTICE</h4>
+                <div class="wrap">
+                    <span id="month_enter">MONTH<input type="text" name="month_input" id="month_input"></span>
+                    <span id="year_enter">YEAR<input type="text" name="year_input" id="year_input"></span>
+                    <span id="dailyRecord">DAILY RECORD OF "OJT" HOURS</span>
+                </div>
+                    
+               
+                <tr>
+                    <th id="lineOut_header" colspan="33">LINE OUT CALENDAR DATES NOT INCLUDED IN THIS TRAINING PERIOD IN FIRST AND LAST MONTHS</th>
+                </tr>
+                <tr>
+                    <th id="item_header" rowspan="2">ITEM</th>
+                </tr>
+                <tr>
+                    <td id="date_header" colspan="31">DATE</td>
+                    <th id="monthTotal_header" rowspan="2">MONTH<br>TOTAL</th>
+                </tr>
+                
+                <tr>
+                    <th></th>
+                    <th>1</th>
+                    <th>2</th>
+                    <th>3</th>
+                    <th>4</th>
+                    <th>5</th>
+                    <th>6</th>
+                    <th>7</th>
+                    <th>8</th>
+                    <th>9</th>
+                    <th>10</th>
+                    <th>11</th>
+                    <th>12</th>
+                    <th>13</th>
+                    <th>14</th>
+                    <th>15</th>
+                    <th>16</th>
+                    <th>17</th>
+                    <th>18</th>
+                    <th>19</th>
+                    <th>20</th>
+                    <th>21</th>
+                    <th>22</th>
+                    <th>23</th>
+                    <th>24</th>
+                    <th>25</th>
+                    <th>26</th>
+                    <th>27</th>
+                    <th>28</th>
+                    <th>29</th>
+                    <th>30</th>
+                    <th>31</th>
+                </tr>
+                
+                <tr>
+                    <th>A</th>
+                    <td><input type="number" name="h1" id="h1"></td>
+                    <td><input type="number" name="h2" id="h2"></td>
+                    <td><input type="number" name="h3" id="h3"></td>
+                    <td><input type="number" name="h4" id="h4"></td>
+                    <td><input type="number" name="h5" id="h5"></td>
+                    <td><input type="number" name="h6" id="h6"></td>
+                    <td><input type="number" name="h7" id="h7"></td>
+                    <td><input type="number" name="h8" id="h8"></td>
+                    <td><input type="number" name="h9" id="h9"></td>
+                    <td><input type="number" name="h10" id="h10"></td>
+                    <td><input type="number" name="h11" id="h11"></td>
+                    <td><input type="number" name="h12" id="h12"></td>
+                    <td><input type="number" name="h13" id="h13"></td>
+                    <td><input type="number" name="h14" id="h14"></td>
+                    <td><input type="number" name="h15" id="h15"></td>
+                    <td><input type="number" name="h16" id="h16"></td>
+                    <td><input type="number" name="h17" id="h17"></td>
+                    <td><input type="number" name="h18" id="h18"></td>
+                    <td><input type="number" name="h19" id="h19"></td>
+                    <td><input type="number" name="h20" id="h20"></td>
+                    <td><input type="number" name="h21" id="h21"></td>
+                    <td><input type="number" name="h22" id="h22"></td>
+                    <td><input type="number" name="h23" id="h23"></td>
+                    <td><input type="number" name="h24" id="h24"></td>
+                    <td><input type="number" name="h25" id="h25"></td>
+                    <td><input type="number" name="h26" id="h26"></td>
+                    <td><input type="number" name="h27" id="h27"></td>
+                    <td><input type="number" name="h28" id="h28"></td>
+                    <td><input type="number" name="h29" id="h29"></td>
+                    <td><input type="number" name="h30" id="h30"></td>
+                    <td><input type="number" name="h31" id="h31"></td>
+                    <td><input type="number" name="A_monthTotal" class="monthTotal" id="A_monthTotal"></td>
+                </tr>
+                <tr>
+                    <th>B</th>
+                    <td><input type="number" name="h1" id="h1"></td>
+                    <td><input type="number" name="h2" id="h2"></td>
+                    <td><input type="number" name="h3" id="h3"></td>
+                    <td><input type="number" name="h4" id="h4"></td>
+                    <td><input type="number" name="h5" id="h5"></td>
+                    <td><input type="number" name="h6" id="h6"></td>
+                    <td><input type="number" name="h7" id="h7"></td>
+                    <td><input type="number" name="h8" id="h8"></td>
+                    <td><input type="number" name="h9" id="h9"></td>
+                    <td><input type="number" name="h10" id="h10"></td>
+                    <td><input type="number" name="h11" id="h11"></td>
+                    <td><input type="number" name="h12" id="h12"></td>
+                    <td><input type="number" name="h13" id="h13"></td>
+                    <td><input type="number" name="h14" id="h14"></td>
+                    <td><input type="number" name="h15" id="h15"></td>
+                    <td><input type="number" name="h16" id="h16"></td>
+                    <td><input type="number" name="h17" id="h17"></td>
+                    <td><input type="number" name="h18" id="h18"></td>
+                    <td><input type="number" name="h19" id="h19"></td>
+                    <td><input type="number" name="h20" id="h20"></td>
+                    <td><input type="number" name="h21" id="h21"></td>
+                    <td><input type="number" name="h22" id="h22"></td>
+                    <td><input type="number" name="h23" id="h23"></td>
+                    <td><input type="number" name="h24" id="h24"></td>
+                    <td><input type="number" name="h25" id="h25"></td>
+                    <td><input type="number" name="h26" id="h26"></td>
+                    <td><input type="number" name="h27" id="h27"></td>
+                    <td><input type="number" name="h28" id="h28"></td>
+                    <td><input type="number" name="h29" id="h29"></td>
+                    <td><input type="number" name="h30" id="h30"></td>
+                    <td><input type="number" name="h31" id="h31"></td>
+                    <td><input type="number" name="B_monthTotal" class="monthTotal" id="B_monthTotal"></td>
+                </tr>
+                <tr>
+                    <th>C</th>
+                    <td><input type="number" name="h1" id="h1"></td>
+                    <td><input type="number" name="h2" id="h2"></td>
+                    <td><input type="number" name="h3" id="h3"></td>
+                    <td><input type="number" name="h4" id="h4"></td>
+                    <td><input type="number" name="h5" id="h5"></td>
+                    <td><input type="number" name="h6" id="h6"></td>
+                    <td><input type="number" name="h7" id="h7"></td>
+                    <td><input type="number" name="h8" id="h8"></td>
+                    <td><input type="number" name="h9" id="h9"></td>
+                    <td><input type="number" name="h10" id="h10"></td>
+                    <td><input type="number" name="h11" id="h11"></td>
+                    <td><input type="number" name="h12" id="h12"></td>
+                    <td><input type="number" name="h13" id="h13"></td>
+                    <td><input type="number" name="h14" id="h14"></td>
+                    <td><input type="number" name="h15" id="h15"></td>
+                    <td><input type="number" name="h16" id="h16"></td>
+                    <td><input type="number" name="h17" id="h17"></td>
+                    <td><input type="number" name="h18" id="h18"></td>
+                    <td><input type="number" name="h19" id="h19"></td>
+                    <td><input type="number" name="h20" id="h20"></td>
+                    <td><input type="number" name="h21" id="h21"></td>
+                    <td><input type="number" name="h22" id="h22"></td>
+                    <td><input type="number" name="h23" id="h23"></td>
+                    <td><input type="number" name="h24" id="h24"></td>
+                    <td><input type="number" name="h25" id="h25"></td>
+                    <td><input type="number" name="h26" id="h26"></td>
+                    <td><input type="number" name="h27" id="h27"></td>
+                    <td><input type="number" name="h28" id="h28"></td>
+                    <td><input type="number" name="h29" id="h29"></td>
+                    <td><input type="number" name="h30" id="h30"></td>
+                    <td><input type="number" name="h31" id="h31"></td>
+                    <td><input type="number" name="C_monthTotal" class="monthTotal" id="C_monthTotal"></td>
+                </tr>
+                <tr>
+                    <th>D</th>
+                    <td><input type="number" name="h1" id="h1"></td>
+                    <td><input type="number" name="h2" id="h2"></td>
+                    <td><input type="number" name="h3" id="h3"></td>
+                    <td><input type="number" name="h4" id="h4"></td>
+                    <td><input type="number" name="h5" id="h5"></td>
+                    <td><input type="number" name="h6" id="h6"></td>
+                    <td><input type="number" name="h7" id="h7"></td>
+                    <td><input type="number" name="h8" id="h8"></td>
+                    <td><input type="number" name="h9" id="h9"></td>
+                    <td><input type="number" name="h10" id="h10"></td>
+                    <td><input type="number" name="h11" id="h11"></td>
+                    <td><input type="number" name="h12" id="h12"></td>
+                    <td><input type="number" name="h13" id="h13"></td>
+                    <td><input type="number" name="h14" id="h14"></td>
+                    <td><input type="number" name="h15" id="h15"></td>
+                    <td><input type="number" name="h16" id="h16"></td>
+                    <td><input type="number" name="h17" id="h17"></td>
+                    <td><input type="number" name="h18" id="h18"></td>
+                    <td><input type="number" name="h19" id="h19"></td>
+                    <td><input type="number" name="h20" id="h20"></td>
+                    <td><input type="number" name="h21" id="h21"></td>
+                    <td><input type="number" name="h22" id="h22"></td>
+                    <td><input type="number" name="h23" id="h23"></td>
+                    <td><input type="number" name="h24" id="h24"></td>
+                    <td><input type="number" name="h25" id="h25"></td>
+                    <td><input type="number" name="h26" id="h26"></td>
+                    <td><input type="number" name="h27" id="h27"></td>
+                    <td><input type="number" name="h28" id="h28"></td>
+                    <td><input type="number" name="h29" id="h29"></td>
+                    <td><input type="number" name="h30" id="h30"></td>
+                    <td><input type="number" name="h31" id="h31"></td>
+                    <td><input type="number" name="D_monthTotal" class="monthTotal" id="D_monthTotal"></td>
+                </tr>
+                <tr>
+                    <th>E</th>
+                    <td><input type="number" name="h1" id="h1"></td>
+                    <td><input type="number" name="h2" id="h2"></td>
+                    <td><input type="number" name="h3" id="h3"></td>
+                    <td><input type="number" name="h4" id="h4"></td>
+                    <td><input type="number" name="h5" id="h5"></td>
+                    <td><input type="number" name="h6" id="h6"></td>
+                    <td><input type="number" name="h7" id="h7"></td>
+                    <td><input type="number" name="h8" id="h8"></td>
+                    <td><input type="number" name="h9" id="h9"></td>
+                    <td><input type="number" name="h10" id="h10"></td>
+                    <td><input type="number" name="h11" id="h11"></td>
+                    <td><input type="number" name="h12" id="h12"></td>
+                    <td><input type="number" name="h13" id="h13"></td>
+                    <td><input type="number" name="h14" id="h14"></td>
+                    <td><input type="number" name="h15" id="h15"></td>
+                    <td><input type="number" name="h16" id="h16"></td>
+                    <td><input type="number" name="h17" id="h17"></td>
+                    <td><input type="number" name="h18" id="h18"></td>
+                    <td><input type="number" name="h19" id="h19"></td>
+                    <td><input type="number" name="h20" id="h20"></td>
+                    <td><input type="number" name="h21" id="h21"></td>
+                    <td><input type="number" name="h22" id="h22"></td>
+                    <td><input type="number" name="h23" id="h23"></td>
+                    <td><input type="number" name="h24" id="h24"></td>
+                    <td><input type="number" name="h25" id="h25"></td>
+                    <td><input type="number" name="h26" id="h26"></td>
+                    <td><input type="number" name="h27" id="h27"></td>
+                    <td><input type="number" name="h28" id="h28"></td>
+                    <td><input type="number" name="h29" id="h29"></td>
+                    <td><input type="number" name="h30" id="h30"></td>
+                    <td><input type="number" name="h31" id="h31"></td>
+                    <td><input type="number" name="E_monthTotal" class="monthTotal" id="E_monthTotal"></td>
+                </tr>
+                <tr>
+                    <th>F</th>
+                    <td><input type="number" name="h1" id="h1"></td>
+                    <td><input type="number" name="h2" id="h2"></td>
+                    <td><input type="number" name="h3" id="h3"></td>
+                    <td><input type="number" name="h4" id="h4"></td>
+                    <td><input type="number" name="h5" id="h5"></td>
+                    <td><input type="number" name="h6" id="h6"></td>
+                    <td><input type="number" name="h7" id="h7"></td>
+                    <td><input type="number" name="h8" id="h8"></td>
+                    <td><input type="number" name="h9" id="h9"></td>
+                    <td><input type="number" name="h10" id="h10"></td>
+                    <td><input type="number" name="h11" id="h11"></td>
+                    <td><input type="number" name="h12" id="h12"></td>
+                    <td><input type="number" name="h13" id="h13"></td>
+                    <td><input type="number" name="h14" id="h14"></td>
+                    <td><input type="number" name="h15" id="h15"></td>
+                    <td><input type="number" name="h16" id="h16"></td>
+                    <td><input type="number" name="h17" id="h17"></td>
+                    <td><input type="number" name="h18" id="h18"></td>
+                    <td><input type="number" name="h19" id="h19"></td>
+                    <td><input type="number" name="h20" id="h20"></td>
+                    <td><input type="number" name="h21" id="h21"></td>
+                    <td><input type="number" name="h22" id="h22"></td>
+                    <td><input type="number" name="h23" id="h23"></td>
+                    <td><input type="number" name="h24" id="h24"></td>
+                    <td><input type="number" name="h25" id="h25"></td>
+                    <td><input type="number" name="h26" id="h26"></td>
+                    <td><input type="number" name="h27" id="h27"></td>
+                    <td><input type="number" name="h28" id="h28"></td>
+                    <td><input type="number" name="h29" id="h29"></td>
+                    <td><input type="number" name="h30" id="h30"></td>
+                    <td><input type="number" name="h31" id="h31"></td>
+                    <td><input type="number" name="F_monthTotal" class="monthTotal" id="F_monthTotal"></td>
+                </tr>
+                <tr>
+                    <th>G</th>
+                    <td><input type="number" name="h1" id="h1"></td>
+                    <td><input type="number" name="h2" id="h2"></td>
+                    <td><input type="number" name="h3" id="h3"></td>
+                    <td><input type="number" name="h4" id="h4"></td>
+                    <td><input type="number" name="h5" id="h5"></td>
+                    <td><input type="number" name="h6" id="h6"></td>
+                    <td><input type="number" name="h7" id="h7"></td>
+                    <td><input type="number" name="h8" id="h8"></td>
+                    <td><input type="number" name="h9" id="h9"></td>
+                    <td><input type="number" name="h10" id="h10"></td>
+                    <td><input type="number" name="h11" id="h11"></td>
+                    <td><input type="number" name="h12" id="h12"></td>
+                    <td><input type="number" name="h13" id="h13"></td>
+                    <td><input type="number" name="h14" id="h14"></td>
+                    <td><input type="number" name="h15" id="h15"></td>
+                    <td><input type="number" name="h16" id="h16"></td>
+                    <td><input type="number" name="h17" id="h17"></td>
+                    <td><input type="number" name="h18" id="h18"></td>
+                    <td><input type="number" name="h19" id="h19"></td>
+                    <td><input type="number" name="h20" id="h20"></td>
+                    <td><input type="number" name="h21" id="h21"></td>
+                    <td><input type="number" name="h22" id="h22"></td>
+                    <td><input type="number" name="h23" id="h23"></td>
+                    <td><input type="number" name="h24" id="h24"></td>
+                    <td><input type="number" name="h25" id="h25"></td>
+                    <td><input type="number" name="h26" id="h26"></td>
+                    <td><input type="number" name="h27" id="h27"></td>
+                    <td><input type="number" name="h28" id="h28"></td>
+                    <td><input type="number" name="h29" id="h29"></td>
+                    <td><input type="number" name="h30" id="h30"></td>
+                    <td><input type="number" name="h31" id="h31"></td>
+                    <td><input type="number" name="G_monthTotal" class="monthTotal" id="G_monthTotal"></td>
+                </tr>
+                <tr>
+                    <th>H</th>
+                    <td><input type="number" name="h1" id="h1"></td>
+                    <td><input type="number" name="h2" id="h2"></td>
+                    <td><input type="number" name="h3" id="h3"></td>
+                    <td><input type="number" name="h4" id="h4"></td>
+                    <td><input type="number" name="h5" id="h5"></td>
+                    <td><input type="number" name="h6" id="h6"></td>
+                    <td><input type="number" name="h7" id="h7"></td>
+                    <td><input type="number" name="h8" id="h8"></td>
+                    <td><input type="number" name="h9" id="h9"></td>
+                    <td><input type="number" name="h10" id="h10"></td>
+                    <td><input type="number" name="h11" id="h11"></td>
+                    <td><input type="number" name="h12" id="h12"></td>
+                    <td><input type="number" name="h13" id="h13"></td>
+                    <td><input type="number" name="h14" id="h14"></td>
+                    <td><input type="number" name="h15" id="h15"></td>
+                    <td><input type="number" name="h16" id="h16"></td>
+                    <td><input type="number" name="h17" id="h17"></td>
+                    <td><input type="number" name="h18" id="h18"></td>
+                    <td><input type="number" name="h19" id="h19"></td>
+                    <td><input type="number" name="h20" id="h20"></td>
+                    <td><input type="number" name="h21" id="h21"></td>
+                    <td><input type="number" name="h22" id="h22"></td>
+                    <td><input type="number" name="h23" id="h23"></td>
+                    <td><input type="number" name="h24" id="h24"></td>
+                    <td><input type="number" name="h25" id="h25"></td>
+                    <td><input type="number" name="h26" id="h26"></td>
+                    <td><input type="number" name="h27" id="h27"></td>
+                    <td><input type="number" name="h28" id="h28"></td>
+                    <td><input type="number" name="h29" id="h29"></td>
+                    <td><input type="number" name="h30" id="h30"></td>
+                    <td><input type="number" name="h31" id="h31"></td>
+                    <td><input type="number" name="H_monthTotal" class="monthTotal" id="H_monthTotal"></td>
+                </tr>
+                <tr>
+                    <th>I</th>
+                    <td><input type="number" name="h1" id="h1"></td>
+                    <td><input type="number" name="h2" id="h2"></td>
+                    <td><input type="number" name="h3" id="h3"></td>
+                    <td><input type="number" name="h4" id="h4"></td>
+                    <td><input type="number" name="h5" id="h5"></td>
+                    <td><input type="number" name="h6" id="h6"></td>
+                    <td><input type="number" name="h7" id="h7"></td>
+                    <td><input type="number" name="h8" id="h8"></td>
+                    <td><input type="number" name="h9" id="h9"></td>
+                    <td><input type="number" name="h10" id="h10"></td>
+                    <td><input type="number" name="h11" id="h11"></td>
+                    <td><input type="number" name="h12" id="h12"></td>
+                    <td><input type="number" name="h13" id="h13"></td>
+                    <td><input type="number" name="h14" id="h14"></td>
+                    <td><input type="number" name="h15" id="h15"></td>
+                    <td><input type="number" name="h16" id="h16"></td>
+                    <td><input type="number" name="h17" id="h17"></td>
+                    <td><input type="number" name="h18" id="h18"></td>
+                    <td><input type="number" name="h19" id="h19"></td>
+                    <td><input type="number" name="h20" id="h20"></td>
+                    <td><input type="number" name="h21" id="h21"></td>
+                    <td><input type="number" name="h22" id="h22"></td>
+                    <td><input type="number" name="h23" id="h23"></td>
+                    <td><input type="number" name="h24" id="h24"></td>
+                    <td><input type="number" name="h25" id="h25"></td>
+                    <td><input type="number" name="h26" id="h26"></td>
+                    <td><input type="number" name="h27" id="h27"></td>
+                    <td><input type="number" name="h28" id="h28"></td>
+                    <td><input type="number" name="h29" id="h29"></td>
+                    <td><input type="number" name="h30" id="h30"></td>
+                    <td><input type="number" name="h31" id="h31"></td>
+                    <td><input type="number" name="I_monthTotal" class="monthTotal" id="I_monthTotal"></td>
+                </tr>
+                <tr>
+                    <th>J</th>
+                    <td><input type="number" name="h1" id="h1"></td>
+                    <td><input type="number" name="h2" id="h2"></td>
+                    <td><input type="number" name="h3" id="h3"></td>
+                    <td><input type="number" name="h4" id="h4"></td>
+                    <td><input type="number" name="h5" id="h5"></td>
+                    <td><input type="number" name="h6" id="h6"></td>
+                    <td><input type="number" name="h7" id="h7"></td>
+                    <td><input type="number" name="h8" id="h8"></td>
+                    <td><input type="number" name="h9" id="h9"></td>
+                    <td><input type="number" name="h10" id="h10"></td>
+                    <td><input type="number" name="h11" id="h11"></td>
+                    <td><input type="number" name="h12" id="h12"></td>
+                    <td><input type="number" name="h13" id="h13"></td>
+                    <td><input type="number" name="h14" id="h14"></td>
+                    <td><input type="number" name="h15" id="h15"></td>
+                    <td><input type="number" name="h16" id="h16"></td>
+                    <td><input type="number" name="h17" id="h17"></td>
+                    <td><input type="number" name="h18" id="h18"></td>
+                    <td><input type="number" name="h19" id="h19"></td>
+                    <td><input type="number" name="h20" id="h20"></td>
+                    <td><input type="number" name="h21" id="h21"></td>
+                    <td><input type="number" name="h22" id="h22"></td>
+                    <td><input type="number" name="h23" id="h23"></td>
+                    <td><input type="number" name="h24" id="h24"></td>
+                    <td><input type="number" name="h25" id="h25"></td>
+                    <td><input type="number" name="h26" id="h26"></td>
+                    <td><input type="number" name="h27" id="h27"></td>
+                    <td><input type="number" name="h28" id="h28"></td>
+                    <td><input type="number" name="h29" id="h29"></td>
+                    <td><input type="number" name="h30" id="h30"></td>
+                    <td><input type="number" name="h31" id="h31"></td>
+                    <td><input type="number" name="J_monthTotal" class="monthTotal" id="J_monthTotal"></td>
+                </tr>
+                <tr>
+                    <th>K</th>
+                    <td><input type="number" name="h1" id="h1"></td>
+                    <td><input type="number" name="h2" id="h2"></td>
+                    <td><input type="number" name="h3" id="h3"></td>
+                    <td><input type="number" name="h4" id="h4"></td>
+                    <td><input type="number" name="h5" id="h5"></td>
+                    <td><input type="number" name="h6" id="h6"></td>
+                    <td><input type="number" name="h7" id="h7"></td>
+                    <td><input type="number" name="h8" id="h8"></td>
+                    <td><input type="number" name="h9" id="h9"></td>
+                    <td><input type="number" name="h10" id="h10"></td>
+                    <td><input type="number" name="h11" id="h11"></td>
+                    <td><input type="number" name="h12" id="h12"></td>
+                    <td><input type="number" name="h13" id="h13"></td>
+                    <td><input type="number" name="h14" id="h14"></td>
+                    <td><input type="number" name="h15" id="h15"></td>
+                    <td><input type="number" name="h16" id="h16"></td>
+                    <td><input type="number" name="h17" id="h17"></td>
+                    <td><input type="number" name="h18" id="h18"></td>
+                    <td><input type="number" name="h19" id="h19"></td>
+                    <td><input type="number" name="h20" id="h20"></td>
+                    <td><input type="number" name="h21" id="h21"></td>
+                    <td><input type="number" name="h22" id="h22"></td>
+                    <td><input type="number" name="h23" id="h23"></td>
+                    <td><input type="number" name="h24" id="h24"></td>
+                    <td><input type="number" name="h25" id="h25"></td>
+                    <td><input type="number" name="h26" id="h26"></td>
+                    <td><input type="number" name="h27" id="h27"></td>
+                    <td><input type="number" name="h28" id="h28"></td>
+                    <td><input type="number" name="h29" id="h29"></td>
+                    <td><input type="number" name="h30" id="h30"></td>
+                    <td><input type="number" name="h31" id="h31"></td>
+                    <td><input type="number" name="K_monthTotal" class="monthTotal" id="K_monthTotal"></td>
+                </tr>
+                <tr>
+                    <th class="job_class_th">ON JOB<br>HOURS</th>
+                    <td><input class="job_class_hours" type="number" name="h1" id="h1"></td>
+                    <td><input class="job_class_hours" type="number" name="h2" id="h2"></td>
+                    <td><input class="job_class_hours" type="number" name="h3" id="h3"></td>
+                    <td><input class="job_class_hours" type="number" name="h4" id="h4"></td>
+                    <td><input class="job_class_hours" type="number" name="h5" id="h5"></td>
+                    <td><input class="job_class_hours" type="number" name="h6" id="h6"></td>
+                    <td><input class="job_class_hours" type="number" name="h7" id="h7"></td>
+                    <td><input class="job_class_hours" type="number" name="h8" id="h8"></td>
+                    <td><input class="job_class_hours" type="number" name="h9" id="h9"></td>
+                    <td><input class="job_class_hours" type="number" name="h10" id="h10"></td>
+                    <td><input class="job_class_hours" type="number" name="h11" id="h11"></td>
+                    <td><input class="job_class_hours" type="number" name="h12" id="h12"></td>
+                    <td><input class="job_class_hours" type="number" name="h13" id="h13"></td>
+                    <td><input class="job_class_hours" type="number" name="h14" id="h14"></td>
+                    <td><input class="job_class_hours" type="number" name="h15" id="h15"></td>
+                    <td><input class="job_class_hours" type="number" name="h16" id="h16"></td>
+                    <td><input class="job_class_hours" type="number" name="h17" id="h17"></td>
+                    <td><input class="job_class_hours" type="number" name="h18" id="h18"></td>
+                    <td><input class="job_class_hours" type="number" name="h19" id="h19"></td>
+                    <td><input class="job_class_hours" type="number" name="h20" id="h20"></td>
+                    <td><input class="job_class_hours" type="number" name="h21" id="h21"></td>
+                    <td><input class="job_class_hours" type="number" name="h22" id="h22"></td>
+                    <td><input class="job_class_hours" type="number" name="h23" id="h23"></td>
+                    <td><input class="job_class_hours" type="number" name="h24" id="h24"></td>
+                    <td><input class="job_class_hours" type="number" name="h25" id="h25"></td>
+                    <td><input class="job_class_hours" type="number" name="h26" id="h26"></td>
+                    <td><input class="job_class_hours" type="number" name="h27" id="h27"></td>
+                    <td><input class="job_class_hours" type="number" name="h28" id="h28"></td>
+                    <td><input class="job_class_hours" type="number" name="h29" id="h29"></td>
+                    <td><input class="job_class_hours" type="number" name="h30" id="h30"></td>
+                    <td><input class="job_class_hours" type="number" name="h31" id="h31"></td>
+                    <td><input class="job_class_total" type="number" name="onJob_monthTotal" id="onJob_monthTotal"></td>
+                </tr>
+                <tr>
+                    <th class="job_class_th">CLASS<br>HOURS</th>
+                    <td><input class="job_class_hours" type="number" name="h1" id="h1"></td>
+                    <td><input class="job_class_hours" type="number" name="h2" id="h2"></td>
+                    <td><input class="job_class_hours" type="number" name="h3" id="h3"></td>
+                    <td><input class="job_class_hours" type="number" name="h4" id="h4"></td>
+                    <td><input class="job_class_hours" type="number" name="h5" id="h5"></td>
+                    <td><input class="job_class_hours" type="number" name="h6" id="h6"></td>
+                    <td><input class="job_class_hours" type="number" name="h7" id="h7"></td>
+                    <td><input class="job_class_hours" type="number" name="h8" id="h8"></td>
+                    <td><input class="job_class_hours" type="number" name="h9" id="h9"></td>
+                    <td><input class="job_class_hours" type="number" name="h10" id="h10"></td>
+                    <td><input class="job_class_hours" type="number" name="h11" id="h11"></td>
+                    <td><input class="job_class_hours" type="number" name="h12" id="h12"></td>
+                    <td><input class="job_class_hours" type="number" name="h13" id="h13"></td>
+                    <td><input class="job_class_hours" type="number" name="h14" id="h14"></td>
+                    <td><input class="job_class_hours" type="number" name="h15" id="h15"></td>
+                    <td><input class="job_class_hours" type="number" name="h16" id="h16"></td>
+                    <td><input class="job_class_hours" type="number" name="h17" id="h17"></td>
+                    <td><input class="job_class_hours" type="number" name="h18" id="h18"></td>
+                    <td><input class="job_class_hours" type="number" name="h19" id="h19"></td>
+                    <td><input class="job_class_hours" type="number" name="h20" id="h20"></td>
+                    <td><input class="job_class_hours" type="number" name="h21" id="h21"></td>
+                    <td><input class="job_class_hours" type="number" name="h22" id="h22"></td>
+                    <td><input class="job_class_hours" type="number" name="h23" id="h23"></td>
+                    <td><input class="job_class_hours" type="number" name="h24" id="h24"></td>
+                    <td><input class="job_class_hours" type="number" name="h25" id="h25"></td>
+                    <td><input class="job_class_hours" type="number" name="h26" id="h26"></td>
+                    <td><input class="job_class_hours" type="number" name="h27" id="h27"></td>
+                    <td><input class="job_class_hours" type="number" name="h28" id="h28"></td>
+                    <td><input class="job_class_hours" type="number" name="h29" id="h29"></td>
+                    <td><input class="job_class_hours" type="number" name="h30" id="h30"></td>
+                    <td><input class="job_class_hours" type="number" name="h31" id="h31"></td>
+                    <td><input class="job_class_total" type="number" name="inClass_monthTotal" id="inClass_monthTotal"></td>
+                </tr>
+            </table>
+            <p id="comments_yellow"><strong>COMMENTS BY ON-JOB SUPERVISOR</strong></p>
+            <textarea name="supervisorComments" rows="6" cols="52"></textarea>
+        </form>
+        </div>
+        
+<!--
+        <div class="blue">
+        <form id="trackHours">
+            <table>
+                <tr>
+                    <th></th>
+                    <th>Jan</th>
+                    <th>Feb</th>
+                    <th>Mar</th>
+                    <th>Apr</th>
+                    <th>May</th>
+                    <th>Jun</th>
+                    <th><label for="instPeriodHours">Period Hours</label></th>
+                    <th><label for="instPreviousHours">Previous Hours</label></th>
+                    <th><label for="instCumHours">Cumulative Hours</label></th>
+                </tr>
+                <tr>
+                    <th class="category">Installation</th>
+                    <td><input type="number" name="instJan" id="instJan"></td>
+                    <td><input type="number" name="instFeb" id="instFeb"></td>
+                    <td><input type="number" name="instMar" id="instMar"></td>
+                    <td><input type="number" name="instApr" id="instApr"></td>
+                    <td><input type="number" name="instMay" id="instMay"></td>
+                    <td><input type="number" name="instJun" id="instJun"></td>
+                    <td><input type="number" name="instPeriodHours" id="instPeriodHours"></td>
+                    <td><input type="number" name="instPreviousHours" id="instPreviousHours"></td>
+                    <td><input type="number" name="instCumHours" id="instCumHours"></td>
+                </tr>
+                <tr>
+                    <th class="category">Cable Pulling</th>
+                    <td><input type="number" name="cpJan" id="cpJan"></td>
+                    <td><input type="number" name="cpFeb" id="cpFeb"></td>
+                    <td><input type="number" name="cpMar" id="cpMar"></td>
+                    <td><input type="number" name="cpApr" id="cpApr"></td>
+                    <td><input type="number" name="cpMay" id="cpMay"></td>
+                    <td><input type="number" name="cpJun" id="cpJun"></td>
+                    <td><input type="number" name="cpPeriodHours" id="cpPeriodHours"></td>
+                    <td><input type="number" name="cpPreviousHours" id="cpPreviousHours"></td>
+                    <td><input type="number" name="cpCumHours" id="cpCumHours"></td>
+                </tr>
+                <tr>
+                    <th class="category">Testing</th>
+                    <td><input type="number" name="testJan" id="testJan"></td>
+                    <td><input type="number" name="testFeb" id="testFeb"></td>
+                    <td><input type="number" name="testMar" id="testMar"></td>
+                    <td><input type="number" name="testApr" id="testApr"></td>
+                    <td><input type="number" name="testMay" id="testMay"></td>
+                    <td><input type="number" name="testJun" id="testJun"></td>
+                    <td><input type="number" name="testPeriodHours" id="testPeriodHours"></td>
+                    <td><input type="number" name="testPreviousHours" id="testPreviousHours"></td>
+                    <td><input type="number" name="testCumHours" id="testCumHours"></td>
+                </tr>
+                <tr>
+                    <th class="category">Service</th>
+                    <td><input type="number" name="srvJan" id="srvJan"></td>
+                    <td><input type="number" name="srvFeb" id="srvFeb"></td>
+                    <td><input type="number" name="srvMar" id="srvMar"></td>
+                    <td><input type="number" name="srvApr" id="srvApr"></td>
+                    <td><input type="number" name="srvMay" id="srvMay"></td>
+                    <td><input type="number" name="srvJun" id="srvJun"></td>
+                    <td><input type="number" name="srvPeriodHours" id="srvPeriodHours"></td>
+                    <td><input type="number" name="srvPreviousHours" id="srvPreviousHours"></td>
+                    <td><input type="number" name="srvCumHours" id="srvCumHours"></td>
+                </tr>
+                <tr class="totals">
+                    <th>TOTALS</th>
+                    <td><input type="number" name="totalJan" class="totals" id="totalJan"></td>
+                    <td><input type="number" name="totalFeb" class="totals" id="totalFeb"></td>
+                    <td><input type="number" name="totalMar" class="totals" id="totalMar"></td>
+                    <td><input type="number" name="totalApr" class="totals" id="totalApr"></td>
+                    <td><input type="number" name="totalMay" class="totals" id="totalMay"></td>
+                    <td><input type="number" name="totalJun" class="totals" id="totalJun"></td>
+                    <td><input type="number" name="totalPeriodHours" class="totals" id="totalPeriodHours"></td>
+                    <td><input type="number" name="totalPreviousHours" class="totals" id="totalPreviousHours"></td>
+                    <td><input type="number" name="totalCumHours" class="totals" id="totalCumHours" data-cy="totalCumHours"></td>
+                </tr>
+            </table>
+            <br>
+            <br>
+            <label id="signature800Label" for="signature800Label">Signature (800 Hours)</label>
+            <input type="text" name="signature800Input" id="signature800Input">
+
+            <label id="signature1600Label" for="signature1600Label">Signature (1600 Hours)</label>
+            <input type="text" name="signature1600Input" id="signature1600Input">
+
+            <label id="signature2400Label" for="signature2400Label">Signature (2400 Hours)</label>
+            <input type="text" name="signature2400Input" id="signature2400Input">
+
+            <label id="signature3200Label" for="signatureLabel">Signature (3200 Hours)</label>
+            <input type="text" name="signature3200Input" id="signature3200Input">
+
+            <label id="signature4000Label" for="signature4000Label">Signature (4000 Hours)</label>
+            <input type="text" name="signature4000Input" id="signature4000Input">
+
+            <label id="signature4800Label" for="signature4800Label">Signature (4800 Hours)</label>
+            <input type="text" name="signature4800Input" id="signature4800Input">
+        </form>
+    </div>
+    -->
+    </main>
+</body>
+
+
+
+
+</html>
