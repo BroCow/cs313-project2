@@ -16,6 +16,8 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 app.get('/', (req, res) => res.render('pages/index'));
 
+app.get("/getApprentice", getApprentice);
+
 app.set("port", (process.env.PORT || 5000));
 app.listen(app.get("port"), function(){
   console.log("Now listening for connections on port: ", app.get("port"));
@@ -23,7 +25,7 @@ app.listen(app.get("port"), function(){
 
 //app.listen(PORT, () => console.log(`Listening on ${ PORT }`))
 
-  
+  /*
   var sql = "SELECT * FROM apprentice";
 
   pool.query(sql, function(err, result) {
@@ -39,4 +41,15 @@ app.listen(app.get("port"), function(){
   
   
   });   
-    
+  */
+
+ function getApprentice(req,res){
+  console.log("Getting apprentice information");
+
+  var apprentice_id = req.query.apprentice_id;
+  console.log("Retrieving apprentice with apprentice_id: ", apprentice_id);
+
+  var result = {apprentice_id: 238, firstname: "John", lastname: "Smith", birthdate: 1950-02-05};
+
+  res.json(result);
+ }
