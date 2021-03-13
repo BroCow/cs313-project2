@@ -13,7 +13,7 @@ app.set('view engine', 'ejs')
 app.get('/', (req, res) => res.render('pages/index'))
   .listen(PORT, () => console.log(`Listening on ${ PORT }`))
 
-  var sql = "SELECT * FROM some_table_here";
+  var sql = "SELECT * FROM apprentice";
 
   pool.query(sql, function(err, result) {
       // If an error occurred...
