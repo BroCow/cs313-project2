@@ -52,6 +52,43 @@ app.listen(app.get("port"), function(){
  function getApprentice(req,res){
   console.log("Getting apprentice information");
 
+  var lastname = req.query.lastname;
+  console.log("Retrieving apprentice with lastname: ", lastname);
+
+  getApprenticeFromDb(lastname, function(error, result){
+    console.log("Back from the getApprenticeDB function with result:", result);
+
+    if (error || result == null || result.length != 1){
+      res.status(500).json({success:false, data: error});
+    } else {
+        res.json(result[0]);
+    }
+  });
+ }
+
+ function getApprenticeFromDb(lastname, callback){
+  console.log("getApprenticeFromDb called with lastname:", lastname);
+
+  var sql = "SELECT apprentice_id, firstname, lastname, birthdate FROM apprentice WHERE lastname = $1::varchar";
+  var params = [lastname];
+
+  pool.query(sql, params, function(err, result){
+      if(err){
+          console.log("An error with the database occurred");
+          console.log(err);
+      }
+
+      console.log("Found db result:" + JSON.stringify(result.rows));
+
+      callback(null, result.rows);
+  });
+}
+
+/**** Comment Out working functions getApprentice & getApprenticeFromDb to test with firstname/lastname ****/
+/*
+ function getApprentice(req,res){
+  console.log("Getting apprentice information");
+
   var apprentice_id = req.query.apprentice_id;
   console.log("Retrieving apprentice with apprentice_id: ", apprentice_id);
 
@@ -63,10 +100,9 @@ app.listen(app.get("port"), function(){
     } else {
         res.json(result[0]);
     }
-
   });
-
  }
+ 
 
  function getApprenticeFromDb(apprentice_id, callback){
   console.log("getApprenticeFromDb called with apprentice_id:", apprentice_id);
@@ -85,3 +121,4 @@ app.listen(app.get("port"), function(){
       callback(null, result.rows);
   });
 }
+*/
