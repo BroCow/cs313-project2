@@ -61,7 +61,10 @@ app.listen(app.get("port"), function(){
     if (error || result == null || result.length != 1){
       res.status(500).json({success:false, data: error});
     } else {
-        res.json(result[0]);
+        var tranfer_params = result[0];
+        res.render("pages/result", tranfer_params);
+        
+        //res.json(result[0]);
     }
   });
  }
