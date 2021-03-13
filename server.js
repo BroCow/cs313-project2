@@ -17,6 +17,7 @@ app.set('view engine', 'ejs')
 app.get('/', (req, res) => res.render('pages/index'))
   .listen(PORT, () => console.log(`Listening on ${ PORT }`))
 
+  /*
   var sql = "SELECT * FROM apprentice";
 
   pool.query(sql, function(err, result) {
@@ -31,4 +32,5 @@ app.get('/', (req, res) => res.render('pages/index'))
       console.log(result.rows);
   
   
-  });     
+  });   
+  */  
