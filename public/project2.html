@@ -9,19 +9,21 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script type="text/javascript" src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-  <link rel="stylesheet" type="text/css" href="/stylesheets/bb.css" />
+  <link rel="stylesheet" type="text/css" href="/stylesheets/project2.css" />
   <title>Project 2</title>
 </head>
 
 <body>
-    <main>
-        <h1>Vanilla JavaScript AJAX Example - Video</h1>
+    <header>
+        <h1>Project 2:  Apprentice - Classes App</h1>
+    </header>
 
+    <main>
         <h2>View All Apprentices</h2>
         <p>If you would like to view a list of all apprentices currently registered, use the button below.</p>
-        <button id="apprentices" value="apprentices" onclick="showAllApprentices()">Show Apprentices</button>
+        <button id="apprentices" type="button" class="btn btn-danger" value="apprentices" onclick="showAllApprentices()">Show Apprentices</button>
+        <div id="allApprentices"></div>
         <div>
-            <h3>Apprentices Currently Registered</h3>
             <ul id="ulApprentices"></ul>
         </div>
 
@@ -29,20 +31,34 @@
         
         <h2>Search For Apprentice</h2>
         <p>If you would like to search for a specific apprentice, use any of the search fields below.</p>
-        <input type="text" id="lastname" placeholder="lastname" name="lastname">
-        <button onclick="searchLastname()">Search Last Name</button>
+        <div class="form-group">
+            <label for="lastname">Last Name:</label>
+            <input type="text" class="form-control" id="lastname" name="lastname">
+        </div>
+        
+        <button type="button" class="btn btn-danger" onclick="searchLastname()">Search Last Name</button>
+        <div id="searchApprentice"></div>
         <div>
-            <h3>Apprentice Search Result</h3>
             <ul id="ulApprentice"></ul>
         </div>
 
         <br>
 
+        <h2>Add Apprentice</h2>
+        <p>If you would like to add an apprentice, complete the fields below and click REGISTER APPRENTICE.</p>
+        <div class="form-group">
+            <label for="addFirstname">First Name:</label>
+            <input type="text" class="form-control" id="addFirstname" name="addFirstname">
+            <label for="addLastname">Last Name:</label>
+            <input type="text" class="form-control" id="addLastname" name="addLastname">
+        </div>
+        <button type="button" class="btn btn-danger" onclick="addApprentice()">Register Apprentice</button>
+        <div id="addApprentice"></div>
+
+        <!--
         <input type="text" id="class" placeholder="class">
         <button onclick="searchClass()">Search Class</button>
-
-        
-
+        -->
 
     </main>
 

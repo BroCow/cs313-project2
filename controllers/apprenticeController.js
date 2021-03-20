@@ -43,7 +43,7 @@ function postApprentice(req, res){
     // parsed by 'app.use(urlextended)' to get variables from url
     var firstname = req.body.firstname;
     var lastname = req.body.lastname;
-    console.log("Creating new apprentice with name: " + firstname);
+    console.log("Creating new apprentice with name: " + lastname + ", " + firstname);
   
     //create variable to store result from model function - pass it class name (variable deleted after adding callback)
     // Callback function added so it doesn't block program while fetching

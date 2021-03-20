@@ -1,0 +1,24 @@
+body{
+    font-size: 2em;
+    background-color: lightgray;
+}
+
+header{
+    background-color: black;
+    color: rgb(224, 32, 18);
+    text-align: center;
+    padding: 2%;
+}
+
+h1{
+    font-size: 3em;
+}
+
+main{
+
+    margin: 5%;
+}
+
+input{
+    max-width: 75%;
+}

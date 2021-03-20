@@ -6,11 +6,16 @@ function showAllApprentices(){
     var apprentices = $("#apprentices").val(); //value = 'apprentices' which is coded into button
     console.log("Apprentices: " + apprentices); 
 
+    
+
     // send request to server using /apprentices endpoint which runs request and related functions
     $.get("/apprentices", function(data){
         // whatever is returned from server stored in 'data'
         console.log("Back from server with: ");
         console.log(data);
+
+        $("#allApprentices").append("<h3>Apprentices Currently Registered</h3>");
+
         // loop through returned array to display data to html page
         for (var i =0; i<data.apprentices.length; i++){
             var apprentices = data.apprentices[i];
@@ -33,6 +38,8 @@ function searchLastname(){
         console.log("Back from server with: ");
         console.log(data);
 
+        $("#searchApprentice").append("<h3>Apprentice Search Result</h3>");
+
         // loop through returned array to display data to html page
         for (var i=0; i<data.apprentices.length; i++){
           var searchResult = data.apprentices[i];
@@ -42,9 +49,20 @@ function searchLastname(){
     })
 }
 
-// Triggered by onclick of button 'Search Class'
-function searchClass(){
-    console.log("Searching class...");
+// Triggered by onclick of button 'Register Apprentice'
+function addApprentice(){
+    console.log("Adding Apprentice...");
+
+    var firstname = $("#addFirstname").val();
+    var lastname = $("#addLastname").val();
+    console.log("Requested Add for: " + lastname + ", " + firstname);
+
+    $.post("/addApprentice", {firstname:firstname, lastname:lastname}, function(data){
+      console.log("Post received by server with: ");
+      console.log(data);
+
+      $("#addApprentice").append("<p><strong>Apprentice " + firstname + " " + lastname + " added to database!</strong></p>");
+    })
 }
 
 

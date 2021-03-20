@@ -104,15 +104,34 @@ function getApprenticeByLastname(lastname, callback){
 }
 
 
-// takes parameter 'apprenticename' to be passed to it so it knows what to get
+// takes parameters 'firstname' and 'lastname' to be passed to it so it knows what to get
 // Add 'callback' function, which is the function added to the controller function to return results
 function insertNewApprentice(firstname, lastname, callback){
     // inserts new apprentice in db with the provided apprentice name
 
+    var sql = "INSERT INTO apprentices (firstname, lastname) VALUES ($1::text, $2::text)";
+    var params = [firstname, lastname];
+
+    pool.query(sql, params, function(err, db_result){
+        if(err){
+            throw err;
+        } else {
+            // We got successful add to db
+            console.log("Added to db with: ");
+            console.log(db_result);
+
+            //create variable that the found rows are dumped into
+            //var result = {apprentices:db_result.rows};
+
+            // instead of immediate return, call callback function, which is function added to controller function to wait
+            callback(null, result);
+        }
+    })
+
     var result = {success: true};
 
     // instead of immediate return, call callback function, which is function added to controller function to wait
-    callback(null, result);
+    //callback(null, result);
 }
 
 
