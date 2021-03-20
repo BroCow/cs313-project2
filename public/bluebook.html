@@ -531,7 +531,7 @@
             <textarea name="supervisorComments" rows="6" cols="52"></textarea>
         </form>
         </div>
-
+ 
         <form action="/getApprentice" method="GET" id="getApprentice">
             <select name="lastname">
                 <option value="">Select an apprentice</option>
@@ -554,9 +554,19 @@
 
         
 
-        
+        <h1>Vanilla JavaScript AJAX Example</h1>
 
-        
+        <form id="exform" action="/getApprentice" method="GET">
+            <select id="lastname" name="lastname">
+                <option value="Scott">Mike Scott</option>
+                <option value="Wayne">John Wayne</option>
+            </select>
+            <input type="submit" class="btn btn-danger btn" id="submitButton">
+            <button>Retrieve data</button>
+        </form>
+
+        <div id="output"></div>
+
 <!--
         <div class="blue">
         <form id="trackHours">

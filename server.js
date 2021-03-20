@@ -4,6 +4,9 @@ const express = require('express');
 const path = require('path');
 //const PORT = process.env.PORT || 5000
 
+const classController = require("./controllers/classController");
+const apprenticeController = require("./controllers/apprenticeController");
+
 process.env.NODE_TLS_REJECT_UNAUTHORIZED = 0;
 
 const { Pool } = require("pg");
@@ -15,9 +18,13 @@ const pool = new Pool({connectionString: connectionString,
 });
 
 
-
 const app = express()
 app.use(express.static(path.join(__dirname, 'public')));
+// parses things that are within the body for us - supports URL encoded bodies
+app.use(express.urlencoded({extended:true}));
+// supports json encoded bodies
+app.use(express.json());
+
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 app.get('/', (req, res) => res.render('pages/index'));
@@ -49,6 +56,19 @@ app.listen(app.get("port"), function(){
   });   
   */
 
+
+app.get("/classes", classController.getClassList);
+app.get("/class", classController.getClass);
+app.post("/addClass", classController.postClass);
+
+app.get("/apprentices", apprenticeController.getApprenticeList);
+app.get("/apprentice", apprenticeController.getApprentice);
+app.post("/addApprentice", apprenticeController.postApprentice);
+
+app.post("/assignApprenticeToClass", apprenticeController.postApprenticeToClass);
+
+
+
  function getApprentice(req,res){
   console.log("Getting apprentice information");
 
@@ -58,13 +78,15 @@ app.listen(app.get("port"), function(){
   getApprenticeFromDb(lastname, function(error, result){
     console.log("Back from the getApprenticeDB function with result:", result);
 
+    
     if (error || result == null || result.length != 1){
       res.status(500).json({success:false, data: error});
     } else {
         var tranfer_params = result[0];
-        res.render("pages/result", tranfer_params);
+
+        //res.render("pages/result", tranfer_params);
         
-        //res.json(result[0]);
+        res.json(result[0]);
     }
   });
  }
@@ -87,41 +109,28 @@ app.listen(app.get("port"), function(){
   });
 }
 
-/**** Comment Out working functions getApprentice & getApprenticeFromDb to test with firstname/lastname ****/
-/*
- function getApprentice(req,res){
-  console.log("Getting apprentice information");
+app.get('/data', function(req, res){
 
-  var apprentice_id = req.query.apprentice_id;
-  console.log("Retrieving apprentice with apprentice_id: ", apprentice_id);
+  // Retrieve the person from the URI query string
+  let lastname = request.query.lastname;
 
-  getApprenticeFromDb(apprentice_id, function(error, result){
-    console.log("Back from the getApprenticeDB function with result:", result);
+  // If there is a person, and the raw JSON data has such a key, return the
+  // associated data.
+  // If there is no person, or the raw JSON data has no such key, return
+  // an error object.
+  if(lastname !== undefined && data.hasOwnProperty(lastname)){
+    res.json(data[lastname]);
+  } else {
+    res.json(data['error']);
+  }
 
-    if (error || result == null || result.length != 1){
-      res.status(500).json({success:false, data: error});
-    } else {
-        res.json(result[0]);
-    }
-  });
- }
- 
+  // End the response
+  res.end();
+});
 
- function getApprenticeFromDb(apprentice_id, callback){
-  console.log("getApprenticeFromDb called with apprentice_id:", apprentice_id);
 
-  var sql = "SELECT apprentice_id, firstname, lastname, birthdate FROM apprentice WHERE apprentice_id = $1::int";
-  var params = [apprentice_id];
 
-  pool.query(sql, params, function(err, result){
-      if(err){
-          console.log("An error with the database occurred");
-          console.log(err);
-      }
 
-      console.log("Found db result:" + JSON.stringify(result.rows));
 
-      callback(null, result.rows);
-  });
-}
-*/
+
+

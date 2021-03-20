@@ -1,32 +1,54 @@
 
+// Triggered by onclick of button 'Show Apprentices'
+function showAllApprentices(){
+    console.log("Showing apprentices...");
 
-function loadDoc() {
-    var xhttp = new XMLHttpRequest(); //This creates a XMLHttpRequest object - keystone of Ajax
-    xhttp.onreadystatechange = function() { // "onreadystatechange" defines function to be called when the readyState property changes
-      if (this.readyState == 4 && this.status == 200) {
-          // readyState Code
-            // 0:request not initialized
-            // 1:server connection established
-            // 2:request received
-            // 3:processing request
-            // 4:request finished and response is ready
-        // status
-            // Returns status-number of request
-                //200: ok
-                //403: forbidden
-                //404: not found
-       document.getElementById("demo").innerHTML = this.responseText; //responseText returns response data as string
-      }
-    };
-    xhttp.open("GET", "ajax.xml", true);
-    // "open" specifies type of request (method, url, async) 
-        // "True" is for asychronus, false would be for synchronus
-    xhttp.send();  
-    //send() sends request to server (used for GET)
-  }
+    var apprentices = $("#apprentices").val(); //value = 'apprentices' which is coded into button
+    console.log("Apprentices: " + apprentices); 
+
+    // send request to server using /apprentices endpoint which runs request and related functions
+    $.get("/apprentices", function(data){
+        // whatever is returned from server stored in 'data'
+        console.log("Back from server with: ");
+        console.log(data);
+        // loop through returned array to display data to html page
+        for (var i =0; i<data.apprentices.length; i++){
+            var apprentices = data.apprentices[i];
+            // div element with id 'ulApprentices' used to display data
+            $("#ulApprentices").append("<li>" + apprentices.lastname + ", " + apprentices.firstname + "</li>");
+        }
+    })
+}
+
+// Triggered by onclick of button 'Search Last Name'
+function searchLastname(){
+    console.log("Searching apprentice...");
+
+    var lastname = $("#lastname").val();
+    console.log("Found Apprentice: " + lastname);
+
+    // send request to server
+    // pass in parameter for lastname
+    $.get("/apprentice", {lastname:lastname}, function(data){
+        console.log("Back from server with: ");
+        console.log(data);
+    })
+}
+
+// Triggered by onclick of button 'Search Class'
+function searchClass(){
+    console.log("Searching class...");
+}
+
+
+
+
+
+
 
 
   /**** Vanilla Javascript Code ****/
+  /*
   var DONE = 4;
   var OKAY = 200;
   var ERROR = {
@@ -82,3 +104,4 @@ function loadDoc() {
       };
     });
   });
+  */

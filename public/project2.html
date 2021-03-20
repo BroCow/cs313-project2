@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script type="text/javascript" src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="/stylesheets/bb.css" />
+  <title>Project 2</title>
+</head>
+
+<body>
+    <main>
+        <h1>Vanilla JavaScript AJAX Example - Video</h1>
+
+        <h2>View All Apprentices</h2>
+        <p>If you would like to view a list of all apprentices currently registered, use the button below.</p>
+        <button id="apprentices" value="apprentices" onclick="showAllApprentices()">Show Apprentices</button>
+        <div>
+            <h3>Apprentices Currently Registered</h3>
+            <ul id="ulApprentices"></ul>
+        </div>
+
+        <br>
+        
+        <h2>Search For Apprentice</h2>
+        <p>If you would like to search for a specific apprentice, use any of the search fields below.</p>
+        <input type="text" id="lastname" placeholder="lastname">
+        <button onclick="searchLastname()">Search Last Name</button>
+        <div>
+            <h3>Apprentice Search Result</h3>
+            <ul id="ulApprentices"></ul>
+        </div>
+
+        <br>
+
+        <input type="text" id="class" placeholder="class">
+        <button onclick="searchClass()">Search Class</button>
+
+        
+
+
+    </main>
+
+    <script src="project2.js"></script>
+</body>
+
+</html>
