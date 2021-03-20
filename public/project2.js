@@ -61,7 +61,7 @@ function addApprentice(){
       console.log("Post received by server with: ");
       console.log(data);
 
-      $("#addApprentice").append("<p><strong>Apprentice " + firstname + " " + lastname + " added to database!</strong></p>");
+      $("#addApprentice").append("<p id='addedMessage'><strong>Apprentice " + firstname + " " + lastname + " added to database!</strong></p>");
     })
 }
 

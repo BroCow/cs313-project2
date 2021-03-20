@@ -22,3 +22,11 @@ main{
 input{
     max-width: 75%;
 }
+
+h3{
+    color: rgb(224, 32, 18);
+}
+
+#addedMessage{
+    color: rgb(224, 32, 18);
+}
