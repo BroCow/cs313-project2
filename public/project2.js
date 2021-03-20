@@ -29,9 +29,16 @@ function searchLastname(){
 
     // send request to server
     // pass in parameter for lastname
-    $.get("/apprentice", {lastname:lastname}, function(data){
+    $.get("/apprentice", {lastname:lastname}, function(data){ 
         console.log("Back from server with: ");
         console.log(data);
+
+        // loop through returned array to display data to html page
+        for (var i=0; i<data.apprentices.length; i++){
+          var searchResult = data.apprentices[i];
+          // div element with id 'ulApprentice' used to display data
+          $("#ulApprentice").append("<li>" + searchResult.lastname + ", " + searchResult.firstname + "</li>");
+      }
     })
 }
 
