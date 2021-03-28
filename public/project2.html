@@ -18,86 +18,114 @@
         <h1>Project 2:  Apprentice - Classes App</h1>
     </header>
 
+    <nav>
+        <div class="flexContainer">
+            <button id="apprenticeButton" class="categoryButton" onclick="toggleApprentice()">Apprentices</button>
+            <button id="classButton" class="categoryButton" onclick="toggleClass()">Classes</button>
+            <button id="rosterButton" class="categoryButton" onclick="toggleRoster()">Create Roster</button>
+        </div>
+    </nav>
+
 
     <main>
+        
+
         <div class="container">
             <!------- CODE FOR APPRENTICES SECTION --------->
-            <div class="section">
-                <h2>View All Apprentices</h2>
-                <p>If you would like to view a list of all apprentices currently registered, use the button below.</p>
-                <button id="apprentices" type="button" class="btn btn-danger" value="apprentices" onclick="showAllApprentices()">Show Apprentices</button>
-                <div id="allApprentices"></div>
-                <div>
-                    <ul id="ulApprentices"></ul>
-                </div>
+            <div class=categoryContainer id="apprenticeSection" style="display:none;">
+                <div class="section">
+                    <h2>View All Apprentices</h2>
+                    <p>If you would like to view a list of all apprentices currently registered, use the button below.</p>
+                    <button id="apprentices" type="button" class="btn btn-danger" value="apprentices" onclick="showAllApprentices()">Show Apprentices</button>
+                    <div id="allApprentices"></div>
+                    <div>
+                        <ul id="ulApprentices"></ul>
+                    </div>
 
-                <br>
-                
-                <h2>Search For Apprentice</h2>
-                <p>If you would like to search for a specific apprentice, use any of the search fields below.</p>
-                <div class="form-group">
-                    <label for="lastname">Last Name:</label>
-                    <input type="text" class="form-control" id="lastname" name="lastname">
-                </div>
-                
-                <button type="button" class="btn btn-danger" onclick="searchLastname()">Search Last Name</button>
-                <div id="searchApprentice"></div>
-                <div>
-                    <ul id="ulApprentice"></ul>
-                </div>
+                    <br>
+                    
+                    <h2>Search For Apprentice</h2>
+                    <p>If you would like to search for a specific apprentice, use any of the search fields below.</p>
+                    <div class="form-group">
+                        <label for="lastname">Last Name:</label>
+                        <input type="text" class="form-control" id="lastname" name="lastname">
+                    </div>
+                    
+                    <button type="button" class="btn btn-danger" onclick="searchLastname()">Search Last Name</button>
+                    <div id="searchApprentice"></div>
+                    <div>
+                        <ul id="ulApprentice"></ul>
+                    </div>
 
-                <br>
+                    <br>
 
-                <h2>Add Apprentice</h2>
-                <p>If you would like to add an apprentice, complete the fields below and click <strong>REGISTER APPRENTICE</strong>.</p>
-                <div class="form-group">
-                    <label for="addFirstname">First Name:</label>
-                    <input type="text" class="form-control" id="addFirstname" name="addFirstname">
-                    <label for="addLastname">Last Name:</label>
-                    <input type="text" class="form-control" id="addLastname" name="addLastname">
+                    <h2>Add Apprentice</h2>
+                    <p>If you would like to add an apprentice, complete the fields below and click <strong>REGISTER APPRENTICE</strong>.</p>
+                    <div class="form-group">
+                        <label for="addFirstname">First Name:</label>
+                        <input type="text" class="form-control" id="addFirstname" name="addFirstname">
+                        <label for="addLastname">Last Name:</label>
+                        <input type="text" class="form-control" id="addLastname" name="addLastname">
+                    </div>
+                    <button type="button" class="btn btn-danger" onclick="addApprentice()">Register Apprentice</button>
+                    <div id="addApprentice"></div>
                 </div>
-                <button type="button" class="btn btn-danger" onclick="addApprentice()">Register Apprentice</button>
-                <div id="addApprentice"></div>
             </div>
 
             <!------- CODE FOR CLASSES SECTION --------->
-            <div class="section">
-                <h2>View All Classes</h2>
-                <p>If you would like to view a list of all classes currently available, use the button below.</p>
-                <button id="classes" type="button" class="btn btn-danger" value="classes" onclick="showAllClasses()">Show Classes</button>
-                <div id="allClasses"></div>
-                <div>
-                    <ul id="ulClasses"></ul>
-                </div>
+            <div class=categoryContainer id="classSection" style="display:none;">
+                <div class="section">
+                    <h2>View All Classes</h2>
+                    <p>If you would like to view a list of all classes currently available, use the button below.</p>
+                    <button id="classes" type="button" class="btn btn-danger" value="classes" onclick="showAllClasses()">Show Classes</button>
+                    <div id="allClasses"></div>
+                    <div>
+                        <ul id="ulClasses"></ul>
+                    </div>
 
+                    <br>
+                    
+                    <h2>Search For Class</h2>
+                    <p>If you would like to search for a specific class, use any of the search fields below.</p>
+                    <div class="form-group">
+                        <label for="classname">Class Name:</label>
+                        <input type="text" class="form-control" id="classname" name="classname">
+                    </div>
+                    
+                    <button type="button" class="btn btn-danger" onclick="searchClassname()">Search Class Name</button>
+                    <div id="searchClass"></div>
+                    <div>
+                        <ul id="ulClass"></ul>
+                    </div>
+
+                    <br>
+    <!--
+                    <h2>Add Apprentice</h2>
+                    <p>If you would like to add an apprentice, complete the fields below and click <strong>REGISTER APPRENTICE</strong>.</p>
+                    <div class="form-group">
+                        <label for="addFirstname">First Name:</label>
+                        <input type="text" class="form-control" id="addFirstname" name="addFirstname">
+                        <label for="addLastname">Last Name:</label>
+                        <input type="text" class="form-control" id="addLastname" name="addLastname">
+                    </div>
+                    <button type="button" class="btn btn-danger" onclick="addApprentice()">Register Apprentice</button>
+                    <div id="addApprentice"></div>
+                    -->
+                </div>
+            </div>
+            <!------- CODE FOR ROSTER SECTION --------->
+            
+            
+            <div class=categoryContainer id="rosterSection" class="section" style="display: none;">
+                <h2>Create Class Roster</h2>
+                <p>To view and select apprentices to be added to a class, use the button below.</p>
+                <button id="apprenticesToClass" type="button" class="btn btn-danger" value="apprenticesToClass" onclick="showApprenticesForClass()">Show Apprentices</button>
+                <div id="selectApprentices"></div>
+                <div id="checkApprentices">
+                    <!-- Populate this div with loop from db including label/input -->
+                </div>
                 <br>
-                <!--
-                <h2>Search For Class</h2>
-                <p>If you would like to search for a specific class, use any of the search fields below.</p>
-                <div class="form-group">
-                    <label for="classname">Class Name:</label>
-                    <input type="text" class="form-control" id="classname" name="classname">
-                </div>
-                
-                <button type="button" class="btn btn-danger" onclick="searchClassname()">Search Class Name</button>
-                <div id="searchClass"></div>
-                <div>
-                    <ul id="ulClass"></ul>
-                </div>
-
-                <br>
-
-                <h2>Add Apprentice</h2>
-                <p>If you would like to add an apprentice, complete the fields below and click <strong>REGISTER APPRENTICE</strong>.</p>
-                <div class="form-group">
-                    <label for="addFirstname">First Name:</label>
-                    <input type="text" class="form-control" id="addFirstname" name="addFirstname">
-                    <label for="addLastname">Last Name:</label>
-                    <input type="text" class="form-control" id="addLastname" name="addLastname">
-                </div>
-                <button type="button" class="btn btn-danger" onclick="addApprentice()">Register Apprentice</button>
-                <div id="addApprentice"></div>
-                -->
+                <button type="button" class="btn btn-danger" onclick="selectApprenticesForClass()">Select Apprentices</button>
             </div>
         </div>
         <!--

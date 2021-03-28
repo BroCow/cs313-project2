@@ -73,7 +73,7 @@ function getApprenticeByLastname(lastname, callback){
     console.log("Searching the DB for apprentice: " + lastname);
     // gets apprentice from db that matches that lastname
 
-    var sql = "SELECT id, firstname, lastname FROM apprentices WHERE lastname=$1::text";
+    var sql = "SELECT id, firstname, lastname FROM apprentices WHERE lastname=$1::text OR lower(lastname)=$1::text OR upper(lastname)=$1::text";
     var params = [lastname];
 
     pool.query(sql, params, function(err, db_result){

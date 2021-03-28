@@ -38,14 +38,18 @@ function searchLastname(){
         console.log("Back from server with: ");
         console.log(data);
 
-        $("#searchApprentice").append("<h3>Apprentice Search Result</h3>");
-
-        // loop through returned array to display data to html page
-        for (var i=0; i<data.apprentices.length; i++){
-          var searchResult = data.apprentices[i];
-          // div element with id 'ulApprentice' used to display data
-          $("#ulApprentice").append("<li>" + searchResult.lastname + ", " + searchResult.firstname + "</li>");
-      }
+        if(data.apprentices.length > 0){
+          $("#searchApprentice").append("<h3>Apprentice Search Result</h3>");
+          // loop through returned array to display data to html page
+          for (var i=0; i<data.apprentices.length; i++){
+            var searchResult = data.apprentices[i];
+            // div element with id 'ulApprentice' used to display data
+            $("#ulApprentice").append("<li>" + searchResult.lastname + ", " + searchResult.firstname + "</li>");
+          }
+        } else {
+          $("#searchApprentice").append("<p>No results found for " + '"' + lastname + '"' + "</p>");
+        }
+        
     })
 }
 
@@ -87,7 +91,7 @@ function showAllClasses(){
       for (var i =0; i<data.classes.length; i++){
           var classes = data.classes[i];
           // div element with id 'ulClasses' used to display data
-          $("#ulClasses").append("<li>" + classes.name + "</li>");
+          $("#ulClasses").append("<li>" + classes.classname + "</li>");
       }
   })
 }
@@ -102,17 +106,101 @@ function searchClassname(){
 
   // send request to server
   // pass in parameter for lastname
-  $.get("/class", {classname:name}, function(data){ 
+  $.get("/class", {classname:classname}, function(data){ 
       console.log("Back from server with: ");
       console.log(data);
 
-      $("#searchClass").append("<h3>Class Search Result</h3>");
-
-      // loop through returned array to display data to html page
-      for (var i=0; i<data.classes.length; i++){
-        var searchResult = data.classes[i];
-        // div element with id 'ulClass' used to display data
-        $("#ulClass").append("<li>" + searchResult.name + ", " + "</li>");
-    }
+      if(data.classes.length > 0){
+        $("#searchClass").append("<h3>Class Search Result</h3>");
+        // loop through returned array to display data to html page
+        for (var i=0; i<data.classes.length; i++){
+          var searchResult = data.classes[i];
+          // div element with id 'ulClass' used to display data
+          $("#ulClass").append("<li>" + searchResult.classname + "</li>");
+        }
+      } else {
+        $("#searchClass").append("<p>No results found for " + '"' + classname + '"' + "</p>");
+      }
+      
   })
 }
+
+
+/****** FUNCTIONS FOR ASSIGNING APPRENTICES TO CLASS *********/
+function showApprenticesForClass(){
+  console.log("Beginning selection process...");
+
+  /*
+  var checkArray = new Array(); 
+  $('input[type=checkbox]').each(function () {
+      if (this.checked) checkArray.push(this.id)
+  });
+  */
+
+  // send request to server
+    // pass in parameter for lastname
+    // send request to server using /apprentices endpoint which runs request and related functions
+    $.get("/apprentices", function(data){
+      // whatever is returned from server stored in 'data'
+      console.log("Back from server with: ");
+      console.log(data);
+
+      $("#selectApprentices").append("<h3>Select Apprentices to Add to Class</h3>");
+
+      // loop through returned array to display data to html page
+      for (var i =0; i<data.apprentices.length; i++){
+          var apprentices = data.apprentices[i];
+          // div element with id 'checkApprentices' used to display data
+          $("#checkApprentices").append("<div class='form-check'>");
+          $("#checkApprentices").append("<label class='form-check-label'>");
+          $("#checkApprentices").append("<input type='checkbox' class='form-check' value=>" + apprentices.lastname + ", " + apprentices.firstname);
+          $("#checkApprentices").append("</label>");
+          $("#checkApprentices").append("</div>");
+          console.log()
+      }
+  })
+}
+
+
+function selectApprenticesForClass(){
+  console.log("Apprentices selected...");
+
+  var checkArray = new Array(); 
+  $('input[type=checkbox]').each(function () {
+      if (this.checked) checkArray.push(this.id)
+  });
+
+  console.log(checkArray);
+
+}
+
+
+/**** FUNCTIONS FOR SHOWING/HIDING SECTIONS ****/
+function toggleApprentice() {
+  var x = document.getElementById("apprenticeSection");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+
+function toggleClass() {
+  var x = document.getElementById("classSection");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+
+function toggleRoster() {
+  var x = document.getElementById("rosterSection");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+
+

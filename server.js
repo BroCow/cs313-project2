@@ -29,15 +29,28 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 app.get('/', (req, res) => res.render('pages/index'));
 
-app.get("/getApprentice", getApprentice);
+//app.get("/getApprentice", getApprentice);
 
 app.set("port", (process.env.PORT || 5000));
 app.listen(app.get("port"), function(){
   console.log("Now listening for connections on port: ", app.get("port"));
 })
 
-//app.listen(PORT, () => console.log(`Listening on ${ PORT }`))
 
+app.get("/classes", classController.getClassList);
+app.get("/class", classController.getClass);
+app.post("/addClass", classController.postClass);
+
+app.get("/apprentices", apprenticeController.getApprenticeList);
+app.get("/apprentice", apprenticeController.getApprentice);
+app.post("/addApprentice", apprenticeController.postApprentice);
+
+app.post("/assignApprenticeToClass", apprenticeController.postApprenticeToClass);
+
+
+
+
+//app.listen(PORT, () => console.log(`Listening on ${ PORT }`))
   /*
   var sql = "SELECT * FROM apprentice";
 
@@ -56,19 +69,7 @@ app.listen(app.get("port"), function(){
   });   
   */
 
-
-app.get("/classes", classController.getClassList);
-app.get("/class", classController.getClass);
-app.post("/addClass", classController.postClass);
-
-app.get("/apprentices", apprenticeController.getApprenticeList);
-app.get("/apprentice", apprenticeController.getApprentice);
-app.post("/addApprentice", apprenticeController.postApprentice);
-
-app.post("/assignApprenticeToClass", apprenticeController.postApprenticeToClass);
-
-
-
+/*
  function getApprentice(req,res){
   console.log("Getting apprentice information");
 
@@ -127,7 +128,7 @@ app.get('/data', function(req, res){
   // End the response
   res.end();
 });
-
+*/
 
 
 

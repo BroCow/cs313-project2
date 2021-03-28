@@ -22,16 +22,16 @@ function getClassList(req, res){
       // get a single class by id
       console.log("Getting one class...");
     
-      // to get parameter 'id' (/topic?id=1)
-      var id = req.query.id;
-      console.log("Getting topic with id: " + id);
+      // to get parameter 'name' (/class?name=Structured Cabling)
+      var classname = req.query.classname;
+      console.log("Getting class with name: " + classname);
     
       // optional, used with API's - get parameter from user
-      //var id = req.params.id;
+      //var name = req.params.name;
     
     //create variable to store result from model function - pass it the id (variable deleted after adding callback)
     // Callback function added so it doesn't block program while fetching
-    classModel.getClassById(id, function(error, result){
+    classModel.getClassByClassname(classname, function(error, result){
         // return result to user, after it is finished being retrieved from database
         res.json(result);
     });  

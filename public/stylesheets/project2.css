@@ -14,11 +14,35 @@ h1{
     font-size: 3em;
 }
 
+nav{
+    background-color: whitesmoke;
+    padding: 2.5%;
+}
+
 
 main{
-    margin-left: 2%;
-    margin-right: 2%;
+    /*margin-left: 2%;
+    margin-right: 2%;*/
     margin-top: 5%;
+}
+
+
+.flexContainer{
+    display: flex;
+    justify-content: space-between;
+
+}
+
+
+.categoryButton{
+    width: 30%;
+    height: 150px;
+    color: whitesmoke;
+    background-color: rgb(69, 66, 67);
+}
+
+.categoryButton:hover{
+    color: rgb(224, 32, 18);
 }
 
 
@@ -36,11 +60,19 @@ h3{
 
 .container{
     display: flex;
-    justify-content: space-between;
 }
 
+.categoryContainer{
+    margin-right: 5%;
+    max-width: 100%;
+}
+
+/*
 .section{
-    max-width: 40%;
+    /*max-width: 40%;
+    width: 30%;
     border: 1px solid white;
     padding: 2%;
+  
 }
+*/

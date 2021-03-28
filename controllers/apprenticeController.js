@@ -18,7 +18,7 @@ function getApprenticeList(req, res){
 function getApprentice(req, res){
     // optional, used with API's - get parameter from user
     //app.get("/apprentice/:id", function(req, res){
-      // get a single apprentice by id
+      // get a single apprentice by lastname
       console.log("Getting one apprentice...");
     
       // to get parameter 'lastname' (/apprentice?lastname=Short)
@@ -59,6 +59,7 @@ function postApprentice(req, res){
 
       var apprenticeId = req.body.apprenticeId;
       var classId = req.body.classId;
+      console.log("Adding apprentice with id " + apprenticeId + "to class with id " + classId);
 
       apprenticeModel.insertApprenticeToClass(apprenticeId, classId, function(error, result){
           res.json(result);
