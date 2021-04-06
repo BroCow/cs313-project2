@@ -22,14 +22,11 @@
         <div class="flexContainer">
             <button id="apprenticeButton" class="categoryButton" onclick="toggleApprentice()">Apprentices</button>
             <button id="classButton" class="categoryButton" onclick="toggleClass()">Classes</button>
-            <button id="rosterButton" class="categoryButton" onclick="toggleRoster()">Create Roster</button>
+            <button id="rosterButton" class="categoryButton" onclick="toggleRoster()">Rosters</button>
         </div>
     </nav>
 
-
     <main>
-        
-
         <div class="container">
             <!------- CODE FOR APPRENTICES SECTION --------->
             <div class=categoryContainer id="apprenticeSection" style="display:none;">
@@ -71,7 +68,7 @@
                     <div id="addApprentice"></div>
                 </div>
             </div>
-
+ 
             <!------- CODE FOR CLASSES SECTION --------->
             <div class=categoryContainer id="classSection" style="display:none;">
                 <div class="section">
@@ -91,7 +88,6 @@
                         <label for="classname">Class Name:</label>
                         <input type="text" class="form-control" id="classname" name="classname">
                     </div>
-                    
                     <button type="button" class="btn btn-danger" onclick="searchClassname()">Search Class Name</button>
                     <div id="searchClass"></div>
                     <div>
@@ -99,43 +95,40 @@
                     </div>
 
                     <br>
-    <!--
-                    <h2>Add Apprentice</h2>
-                    <p>If you would like to add an apprentice, complete the fields below and click <strong>REGISTER APPRENTICE</strong>.</p>
-                    <div class="form-group">
-                        <label for="addFirstname">First Name:</label>
-                        <input type="text" class="form-control" id="addFirstname" name="addFirstname">
-                        <label for="addLastname">Last Name:</label>
-                        <input type="text" class="form-control" id="addLastname" name="addLastname">
-                    </div>
-                    <button type="button" class="btn btn-danger" onclick="addApprentice()">Register Apprentice</button>
-                    <div id="addApprentice"></div>
-                    -->
+    
                 </div>
             </div>
+
             <!------- CODE FOR ROSTER SECTION --------->
-            
-            
             <div class=categoryContainer id="rosterSection" class="section" style="display: none;">
-                <h2>Create Class Roster</h2>
-                <p>To view and select apprentices to be added to a class, use the button below.</p>
-                <button id="apprenticesToClass" type="button" class="btn btn-danger" value="apprenticesToClass" onclick="showApprenticesForClass()">Show Apprentices</button>
-                <div id="selectApprentices"></div>
-                <div id="checkApprentices">
-                    <!-- Populate this div with loop from db including label/input -->
+                <h2>Add Apprentice to Class</h2>
+
+                <div class="form-group">
+                    <label for="rosterLastname">Last Name:</label>
+                    <input type="text" class="form-control" id="rosterLastname" name="rosterLastname">
                 </div>
-                <br>
-                <button type="button" class="btn btn-danger" onclick="selectApprenticesForClass()">Select Apprentices</button>
+                <div id="selectApprentice"></div>
+                <div>
+                    <ul id="ulSelectApprentice"></ul>
+                </div>
+
+                <div class="form-group">
+                    <label for="rosterClassname">Class Name:</label>
+                    <input type="text" class="form-control" id="rosterClassname" name="rosterClassname">
+                </div>
+                
+                <button id="roster" type="button" class="btn btn-danger" value="roster" onclick="requestApprenticeToClass()">Assign Apprentice to Class</button>
+                <div id="rosterSuccessMessage"></div>
+                <div id="selectClass"></div>
+                <div>
+                    <ul id="ulselectClass"></ul>
+                </div>
             </div>
         </div>
-        <!--
-        <input type="text" id="class" placeholder="class">
-        <button onclick="searchClass()">Search Class</button>
-        -->
-
     </main>
 
     <script src="project2.js"></script>
+
 </body>
 
 </html>

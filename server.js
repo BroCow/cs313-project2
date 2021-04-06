@@ -17,7 +17,7 @@ const pool = new Pool({connectionString: connectionString,
   }
 });
 
-
+ 
 const app = express()
 app.use(express.static(path.join(__dirname, 'public')));
 // parses things that are within the body for us - supports URL encoded bodies
@@ -27,7 +27,7 @@ app.use(express.json());
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
-app.get('/', (req, res) => res.render('pages/index'));
+app.get('/', (req, res) => res.render('pages/index')); 
 
 //app.get("/getApprentice", getApprentice);
 
@@ -45,7 +45,8 @@ app.get("/apprentices", apprenticeController.getApprenticeList);
 app.get("/apprentice", apprenticeController.getApprentice);
 app.post("/addApprentice", apprenticeController.postApprentice);
 
-app.post("/assignApprenticeToClass", apprenticeController.postApprenticeToClass);
+// Change this to .post
+app.get("/apprentice_class", apprenticeController.getApprenticeToClass);      // Passes lastname and classname from project2.js to controller
 
 
 

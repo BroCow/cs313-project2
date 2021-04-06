@@ -67,6 +67,11 @@ h3{
     max-width: 100%;
 }
 
+#apprenticeSection, #classSection, #rosterSection{
+    border-left: solid 2px whitesmoke;
+    padding-left: 1%;
+}
+
 /*
 .section{
     /*max-width: 40%;

@@ -20,7 +20,7 @@ function getApprentice(req, res){
     //app.get("/apprentice/:id", function(req, res){
       // get a single apprentice by lastname
       console.log("Getting one apprentice...");
-    
+     
       // to get parameter 'lastname' (/apprentice?lastname=Short)
       var lastname = req.query.lastname;
       console.log("Getting apprentice with lastname: " + lastname);
@@ -54,14 +54,16 @@ function postApprentice(req, res){
 
 
   // function from "/assignApprenticeToClass" in server.js
-  function postApprenticeToClass (req, res){
+  function getApprenticeToClass (req, res){
       console.log("Assigning apprentice to class...");
 
-      var apprenticeId = req.body.apprenticeId;
-      var classId = req.body.classId;
-      console.log("Adding apprentice with id " + apprenticeId + "to class with id " + classId);
+      var lastname = req.query.rosterLastname;
+      console.log("Getting apprentice with lastname: " + lastname);
 
-      apprenticeModel.insertApprenticeToClass(apprenticeId, classId, function(error, result){
+      var classname = req.query.rosterClassname;
+      console.log("Getting class with classname: " + classname);
+
+      apprenticeModel.selectApprenticeToClass(lastname, classname, function(error, result){
           res.json(result);
       });  
   }
@@ -72,5 +74,5 @@ module.exports = {
     getApprenticeList: getApprenticeList,
     getApprentice: getApprentice,
     postApprentice: postApprentice,
-    postApprenticeToClass: postApprenticeToClass
+    getApprenticeToClass: getApprenticeToClass
   };

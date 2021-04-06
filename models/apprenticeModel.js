@@ -111,7 +111,7 @@ function insertNewApprentice(firstname, lastname, callback){
 
     var sql = "INSERT INTO apprentices (firstname, lastname) VALUES ($1::text, $2::text)";
     var params = [firstname, lastname];
-
+ 
     pool.query(sql, params, function(err, db_result){
         if(err){
             throw err;
@@ -138,13 +138,31 @@ function insertNewApprentice(firstname, lastname, callback){
 // takes parameter 'apprenticeId' and 'classId' to be passed to it so it knows what to get
 // Add 'callback' function, which is the function added to the controller function to return results
 
-function insertApprenticeToClass(apprenticeId, classId, callback){
+function selectApprenticeToClass(lastname, classname, callback){
     // assigns apprentice in db to class with the provided apprentice id and class id
 
-    var result = {success: true};
+    var sql = "INSERT INTO roster (class_id, apprentice_id) SELECT c.id, a.id FROM classes c, apprentices a WHERE c.classname=$1::text AND a.lastname=$2::text";
+    var params = [classname, lastname];
 
+    pool.query(sql, params, function(err, db_result){
+        if(err){
+            throw err;
+        } else {
+            // We got successful result from db
+            console.log("Apprentice added to class!");
+            console.log(db_result);
+
+            //create variable that the found rows are dumped into
+            //var result = {selections:db_result.rows};
+
+            // instead of immediate return, call callback function, which is function added to controller function to wait
+            callback(null, result);
+        }
+    })
+    var result = {success: true};
     // instead of immediate return, call callback function, which is function added to controller function to wait
-    callback(null, result);
+    //callback(null, result);
+
 }
 
 
@@ -153,5 +171,5 @@ module.exports = {
     getAllApprentices: getAllApprentices,
     getApprenticeByLastname: getApprenticeByLastname,
     insertNewApprentice: insertNewApprentice,
-    insertApprenticeToClass: insertApprenticeToClass
+    selectApprenticeToClass: selectApprenticeToClass
   };

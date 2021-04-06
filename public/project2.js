@@ -25,13 +25,18 @@ function showAllApprentices(){
     })
 }
 
+
 // Triggered by onclick of button 'Search Last Name'
 function searchLastname(){
     console.log("Searching apprentice...");
 
+    if(document.getElementById("h3_apSearchResult") !== null){
+      document.getElementById("h3_apSearchResult").style.display="none";
+    }
+    
     var lastname = $("#lastname").val();
     console.log("Found Apprentice: " + lastname);
-
+    
     // send request to server
     // pass in parameter for lastname
     $.get("/apprentice", {lastname:lastname}, function(data){ 
@@ -39,9 +44,10 @@ function searchLastname(){
         console.log(data);
 
         if(data.apprentices.length > 0){
-          $("#searchApprentice").append("<h3>Apprentice Search Result</h3>");
+          $("#searchApprentice").append("<h3 id='h3_apSearchResult'>Apprentice Search Result</h3>");
+
           // loop through returned array to display data to html page
-          for (var i=0; i<data.apprentices.length; i++){
+          for (var i=0; i < data.apprentices.length; i++){
             var searchResult = data.apprentices[i];
             // div element with id 'ulApprentice' used to display data
             $("#ulApprentice").append("<li>" + searchResult.lastname + ", " + searchResult.firstname + "</li>");
@@ -49,8 +55,7 @@ function searchLastname(){
         } else {
           $("#searchApprentice").append("<p>No results found for " + '"' + lastname + '"' + "</p>");
         }
-        
-    })
+    }) 
 }
 
 // Triggered by onclick of button 'Register Apprentice'
@@ -127,38 +132,32 @@ function searchClassname(){
 
 
 /****** FUNCTIONS FOR ASSIGNING APPRENTICES TO CLASS *********/
-function showApprenticesForClass(){
-  console.log("Beginning selection process...");
+function requestApprenticeToClass(){
+  console.log("Beginning assignment process...");
 
-  /*
-  var checkArray = new Array(); 
-  $('input[type=checkbox]').each(function () {
-      if (this.checked) checkArray.push(this.id)
-  });
-  */
+  var roster = $("#roster").val();
+  console.log("Creating roster: " + roster);
 
-  // send request to server
-    // pass in parameter for lastname
-    // send request to server using /apprentices endpoint which runs request and related functions
-    $.get("/apprentices", function(data){
-      // whatever is returned from server stored in 'data'
-      console.log("Back from server with: ");
-      console.log(data);
+  var rosterLastname = $("#rosterLastname").val();
+  console.log("Found Apprentice: " + rosterLastname);
 
-      $("#selectApprentices").append("<h3>Select Apprentices to Add to Class</h3>");
+  var rosterClassname = $("#rosterClassname").val();
+  console.log("Found Class: " + rosterClassname);
 
-      // loop through returned array to display data to html page
-      for (var i =0; i<data.apprentices.length; i++){
-          var apprentices = data.apprentices[i];
-          // div element with id 'checkApprentices' used to display data
-          $("#checkApprentices").append("<div class='form-check'>");
-          $("#checkApprentices").append("<label class='form-check-label'>");
-          $("#checkApprentices").append("<input type='checkbox' class='form-check' value=>" + apprentices.lastname + ", " + apprentices.firstname);
-          $("#checkApprentices").append("</label>");
-          $("#checkApprentices").append("</div>");
-          console.log()
-      }
+  //CHANGE THIS TO .POST
+  $.get("/apprentice_class", {rosterLastname:rosterLastname, rosterClassname:rosterClassname}, function(data){
+    console.log("Arrived at /apprentice_class");
+
+    $("#rosterSuccessMessage").append("<p id='p_rosterSuccess'><strong>Apprentice added to class!</strong></p>");
   })
+
+  // Values from user passed as parameters to /assignApprenticeToClass in server.js
+  /*
+  $.get("/assignApprenticeToClass", {lastname:lastname}, {classname:classname}, function(data){
+    console.log("Back from server with: ");
+    console.log(data);
+  })
+  */
 }
 
 

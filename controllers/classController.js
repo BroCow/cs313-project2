@@ -6,7 +6,7 @@ const classModel = require("../models/classModel");
 function getClassList(req, res){
     // get the list of all classes
     console.log("Getting all classes...");
-
+ 
     //create variable to store result from model function
     // Callback function added so it doesn't block program while fetching
     classModel.getAllClasses(function(error, result){

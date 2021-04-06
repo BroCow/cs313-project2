@@ -105,7 +105,7 @@ function getClassByClassname(classname, callback){
 // Add 'callback' function, which is the function added to the controller function to return results
 function insertNewClass(classname, callback){
     // inserts new class in db with the provided class name
-
+ 
     var result = {success: true};
 
     //return result;
